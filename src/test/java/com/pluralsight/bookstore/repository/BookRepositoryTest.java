@@ -7,6 +7,7 @@ import com.pluralsight.bookstore.util.NumberGenerator;
 import com.pluralsight.bookstore.util.TextUtil;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
@@ -26,7 +27,7 @@ public class BookRepositoryTest {
     private BookRepository bookRepository;
 
     @Deployment
-    public static JavaArchive createDeployment() {
+    public static Archive<?> createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addClass(BookRepository.class)
                 .addClass(Book.class)
